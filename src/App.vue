@@ -13,7 +13,19 @@ export default Vue.extend({
   name: 'App',
   components: {
     HelloWorld
-  }
+  },
+  mounted() {
+    this.testEmail();
+  },
+  methods:{
+    testEmail() {
+     console.log('email',this.$accessor.email);
+     this.$accessor.setEmail('action@a.com');
+     console.log('email',this.$accessor.email);
+     this.$accessor.resetEmail();
+      console.log('email',this.$accessor.email);
+    }
+  },
 });
 </script>
 
